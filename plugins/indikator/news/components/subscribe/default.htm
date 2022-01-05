@@ -1,0 +1,5 @@
+<form id="subscribe" data-request="{{ __SELF__ }}::onSubscription1" data-request-success="alert('{{ text_messages }}')">
+	<div class="form-group"><input name="name" type="text" class="form-control newsletter" placeholder="Full Name"  id="subscribersName" aria-label="Full Name" required></div>
+    <div class="form-group"><input name="email" type="text" class="form-control newsletter" placeholder="Your Email"  id="subscribersEmail" aria-label="Your Email" required></div>
+    <a href="{{ url('company-booking/') }}/{{ post.id }}" target="_new" class="button medium acc1 pull-right mt-1">Subscribe</a>
+</form>

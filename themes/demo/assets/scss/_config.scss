@@ -1,0 +1,35 @@
+// Extra small devices (portrait phones, less than 576px). NO MEDIA QUERY since this is the default in Bootstrap
+$primary: #0f1726;
+$text-color-bg: rgba(255, 255, 255, .5);
+/* Color Scheme */
+
+$acc1: #0c8040;
+$acc2: #A5986A;
+/* Other Variables */
+
+$link-color: $acc2;
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.50;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1;
+$h6-font-size: $font-size-base 0.8;
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Pathway Gothic One', sans-serif;
+    color: bisque;
+    background-color: #070707;
+}
+
+

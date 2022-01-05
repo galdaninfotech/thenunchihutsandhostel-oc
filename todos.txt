@@ -1,0 +1,6 @@
+TODOs
+-----
+
+Replace our team with Best Service
+Move 'Why Choose Us' to footer
+remove Flickr Photos

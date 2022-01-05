@@ -1,0 +1,36 @@
+==
+function onStart() {
+
+}
+==
+<p>{{ name }} has sent an enquiry through online contact page with the following details:</p>
+<br>
+
+<table>
+    <tbody>
+        <tr><td>Name</td><td>{{ name }}</td></tr>
+        <tr><td>Email</td><td>{{ email }}</td></tr>
+        <tr><td>Contact No</td><td>{{ phone }}</td></tr>
+        <tr><td>Arrival Date</td><td>{{ arrival }}</td></tr>
+        <tr><td>Number Of Persons</td><td>{{ num_persons }}</td></tr>
+        <tr><td>Tour</td><td>{{ tour }}</td></tr>
+        <tr><td>Message</td><td>{{ messagez }}</td></tr>
+    </tbody>
+</table>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<p>Best regards,</p>
+<div id="address">
+    <h4>{{company}}</h4>
+    {{addressline1}}<br>
+    {{addressline2}}<br>
+    {% if mobile1 %} Mobile: {{mobile1}} / {{mobile2}} <br> {% endif %}
+    {% if phone1 %} Phone : {{phone1}} / {{phone2}}<br> {% endif %}
+    {% if email1 %} Email : {{email1}}<br>{% endif %}
+    {% if email2 %} Email : {{email2}}<br>{% endif %}
+</div>

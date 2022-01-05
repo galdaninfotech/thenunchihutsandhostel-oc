@@ -1,0 +1,183 @@
+description = "Default layout"
+
+
+security = "all"
+
+
+start = "id-1"
+activeNode = 0
+listItemClasses = "nav-item"
+primaryClasses = "navbar-nav"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 2
+
+
+
+==
+<?php
+function onStart() {
+    $config = App::make('config');
+    $this['debug'] = $config->get('app.debug');
+    $this['company'] = $config->get('site.company', 'Company Name');
+    $this['company_sm'] = $config->get('site.company_sm');
+    $this['slogan'] = $config->get('site.slogan', 'Company Slogan');
+    $this['mobile1'] = $config->get('site.mobile1');
+    $this['mobile2'] = $config->get('site.mobile2');
+    $this['mobile3'] = $config->get('site.mobile3');
+    $this['phone'] = $config->get('site.phone');
+    $this['email1'] = $config->get('site.email1');
+    $this['email2'] = $config->get('site.email2');
+    $this['addressline1'] = $config->get('site.addressline1');
+    $this['addressline2'] = $config->get('site.addressline2');
+
+    $this['title-sm'] = $this->page->title;
+    if(substr($this->currentPageUrl(), strrpos($this->currentPageUrl(), '/') + 1) == 'www.himalaya-trails.com') {
+        $this['bigImageClass'] = 'himalaya-trails';
+    } else {
+        $this['bigImageClass'] = substr($this->currentPageUrl(), strrpos($this->currentPageUrl(), '/') + 1);
+    }
+}
+
+?>
+==
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>{{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.title }}" />
+
+    <meta charset='UTF-8'>
+    <meta name="theme-color" content="#03213a" />
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/fevicon-16x16.png'|theme }}">
+    <meta name="google-site-verification" content="kSj1d3XG93hMpJHSZ9_w8P_H7mqzRaZM3t1DZvqSpYw" />
+
+    {% placeholder meta %}
+
+    <!-- Critical Path Inline CSS -->
+    <style>
+
+    </style>
+
+
+    
+    <!-- for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]><script src="http://html5shiv .googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+    <link href="{{ [
+        'assets/css/bootstrap.min.css',
+        'assets/css/fonts.css',
+        'assets/css/style.css',
+        'assets/css/responsive.css',
+        'assets/css/animate.css',
+        'assets/css/prettyPhoto.css',
+        'assets/css/owl.carousel.css',
+        'assets/css/owl.theme.css',
+        'assets/css/flexslider.css',
+        'assets/css/cd-hero.css',
+        'assets/css/preset6.css',
+        ]|theme }}" rel="stylesheet">
+        
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+    <script src="javascript/html5shiv.js"></script>
+    <script src="javascript/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.11.2/js/v4-shims.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=BenchNine' rel='stylesheet' type='text/css'>
+    {% styles %}
+
+{% if this.page.title != 'Home' %}
+    <link href="{{'assets/css/slideshow-sm.css'|theme}}" rel="stylesheet" />
+{% endif %}
+
+
+</head>
+
+<body>
+    
+
+
+
+
+{% partial 'header'%}
+
+{% if this.page.title == 'Home' %}
+    {% partial 'slideshow'%}
+{% else %}
+    {% partial 'slideshow-sm'%}
+{% endif %}
+
+{% page %}
+{% partial 'footer' %}
+
+
+    <script src="{{ [
+        'assets/javascript/jquery.js',
+        'assets/javascript/bootstrap.min.js',
+        'assets/javascript/style-switcher.js',
+        'assets/javascript/owl.carousel.js',
+        'assets/javascript/jquery.prettyPhoto.js',
+        'assets/javascript/jquery.flexslider.js',
+        'assets/javascript/cd-hero.js',
+        'assets/javascript/isotope.js',
+        'assets/javascript/ini.isotope.js',
+        'assets/javascript/wow.min.js',
+        'assets/javascript/smoothscroll.js',
+        'assets/javascript/jquery.easing.1.3.js',
+        'assets/javascript/jquery.counterup.min.js',
+        'assets/javascript/waypoints.min.js',
+        'assets/javascript/custom.js',
+        '@framework',
+        '@framework.extras',
+    ]|theme }}">
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            var getUrl = window.location;
+            var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+            
+            var url = $(location).attr('href')
+            parts = url.split("/"),
+            smallImageFolder = parts[parts.length-2];
+            smallImageURL = parts[parts.length-1];
+            $('#itinerary-image-sm>img').attr('src', baseUrl+'/themes/demo/assets/images/'+smallImageFolder+'/'+smallImageURL+'-sm.jpg');
+            $('#page-image-sm>img').attr('src', baseUrl+'/themes/demo/assets/images/pages/'+smallImageURL+'-sm.jpg');
+
+
+			setTimeout(function(){
+				var s=document.createElement('script');
+				s.type='text/javascript';
+                s.charset='UTF-8';
+				s.src=((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=False&ui=true&settings=Manual&from=';
+				var p=document.getElementsByTagName('head')[0]||document.documentElement;
+				p.insertBefore(s,p.firstChild); },0);
+
+                setTimeout(function(){
+                    $('#WidgetFloaterPanels').css({'top': '-4px', 'left': '76%'});
+                    // $('#WidgetTranslateWithSpan').remove();
+                    // $('#WidgetCloseButton').remove();
+                    // $('#WidgetLogoPanel').remove();
+                    // $('#FloaterProgressBar').remove();
+                    // $('#CTFLinksPanel').remove();
+                    $('#WidgetFloaterCollapsedSpan').text('Language')
+                }, 9000);
+                
+
+
+
+        });
+    </script>

@@ -1,0 +1,127 @@
+title = "Customise Your Trip"
+url = "/customise-trip"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+
+
+==
+function onCustomise()
+{
+    $config = App::make('config');
+    $data = post();
+    $params = [
+        'name' => $data['name'],
+        'email'     => $data['email'],
+        'phone'     => $data['phone'],
+        'country'     => $data['country'],
+        'destination'     => $data['destination'],
+        'accommodation'     => $data['accommodation'],
+        'numperson'     => $data['numperson'],
+        'month'     => $data['month'],
+        'days'     => $data['days'],
+        'budget'     => $data['budget'],
+        'currency'     => $data['currency'],
+        'requirements'     => $data['requirements'],
+        'company'     => $config->get('site.company'),
+        'addressline1'     => $config->get('site.addressline1'),
+        'addressline2'     => $config->get('site.addressline2'),
+        'mobile1'     => $config->get('site.mobile1'),
+        'mobile2'     => $config->get('site.mobile2'),
+        'phone1'     => $config->get('site.phone1'),
+        'phone2'     => $config->get('site.phone2'),
+        'email1'     => $config->get('site.email1'),
+        'email2'     => $config->get('site.email2'),
+    ];
+
+    Mail::send('galdan.sitetools::mail.custom', $params, function($message) {
+        $message->to('info@himalaya-trails.com', 'Himalaya Trails');
+        $message->subject('Custom Trip Request');
+    });
+}
+==
+<div class="container mt-3 primary-heading">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <h1 class="home-primary-heading">{{this.page.title}}</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row main-content">
+        <div class="col">
+            <form id="customise-form" data-request="onCustomise" data-request-success="
+                $('form#customise-form .form-group').fadeOut();
+                $('form#customise-form').append('<h2>Congratulation '+$('#name').val()+'!</h2>');
+                $('form#customise-form').append('<p>Your custom trip has been sent. You will shortly receive mail with detailed information.</p>');
+                console.log('{{ text_messages }}');
+            ">
+                <div class="form-group">
+                    <input name="name" type="name" id="name" placeholder="Full Name" class="input-control" required="required"/>
+
+                    <input name="email" type="email" id="email" placeholder="Email Address" class="input-control" required="required"/>
+                </div>
+
+                <div class="form-group">
+                    <input name="phone" type="text" id="phone" placeholder="Phone Number" class="input-control" />
+
+                    <input name="country" type="country" id="country" placeholder="Country" class="input-control"/>
+                </div>
+
+                <div class="form-group">
+                    <input name="destination" type="destination" id="destination" placeholder="Travel Destination" class="input-control" style="flex: 6"/>
+
+                    <select name="accommodation" class="input-control" style="flex: 6">
+                        <option value="Accommodation">Accommodation</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Guest House">Guest House</option>
+                        <option value="Home Stay">Home Stay</option>
+                    </select>
+
+                    <input name="numperson" type="number" id="numperson" placeholder="Number Of Person" class="input-control" style="flex: 2"/>
+                </div>
+
+                
+                <div class="form-group">
+                    <select name="month" class="input-control" style="flex: 2">
+                        <option value="Prefered Month">Prefered Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                    <input name="days" type="number" id="days" placeholder="Number Of Days"  class="input-control" style="flex: 2" />
+                    <input name="budget" type="number" id="budget" placeholder="Travel Budget"  class="input-control" style="flex: 2" />
+                    <select name="currency" class="input-control" style="flex: 1">
+                        <option value="Currency">Currency</option>
+                        <option value="Dollar">Dollar</option>
+                        <option value="Euro">Euro</option>
+                        <option value="Swiss Frank">Swiss Frank</option>
+                        <option value="Indian Ruppes">INR</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="requirements" class="input-control" rows="10" placeholder="Other Requirements"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button>Send Your Custom Trip</button>
+
+                </div>
+            </form>
+        </div> <!--  .col-md-12 -->
+    </div> <!--  .row -->
+</div> <!--  .container -->

@@ -1,0 +1,41 @@
+title = "About Us"
+url = "/about"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+
+
+==
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <h1 class="home-primary-heading">{{this.page.title}}</h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row main-content">
+    <div class="col-md-8">
+      <p>
+        Situated 125 kms from the Leh Town, Paradise waits at The Nunchi-private huts & hostel, nestled in the beautiful valley of Hunder, Nubra,Leh-Ladakh.
+      </p>
+
+      <p>Offering 8 private and comfortable huts with modern facilities to experience as well as room for the budget travelers. We offer deals to all types of travelers.
+      </p>
+
+      <p>Make your stay iconic, fresh, inspiring, original and utterly magnificent. At The Nunchi  a unique and delightful experience awaits.</p>
+
+      <img class="mt-5" src="{{url('assets/images/pages/about.jpg'|theme)}}" alt="{{this.page.title}} - {{company}}">
+      
+    </div> <!--  .col-md-8 -->
+    <div class="col-md-4">
+        {% partial 'right1' %}
+    </div> <!--  .col-md-4 -->
+  </div> <!--  .row -->
+</div> <!--  .container -->
+

@@ -1,0 +1,69 @@
+<noscript>
+	<h1>This site uses javascript. Please enable javascript to view its content.</h1>
+</noscript>
+
+
+
+<!-- Style switcher start -->
+<div class="style-switch-wrapper">
+<div class="style-switch-button">
+	<i class="fa fa-sliders" style="margin: 35%; color: #935a1b"></i>
+</div>
+<h3>Booking Options</h3>
+
+<a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
+</div>
+<!-- Style switcher end -->
+
+<div class="body-inner">
+
+<!-- Header start -->
+<header id="header" class="navbar-fixed-top header" role="banner">
+<div class="container">
+	<div class="row">
+		<!-- Logo start -->
+		<div class="navbar-header">
+		   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-brand navbar-bg">
+				<a href="{{url('/')}}"><img src="{{'assets/images/logo.png'|theme}}" alt="{{company}} Logo"></a> 
+			</div>                   
+		</div><!--/ Logo end -->
+		<nav class="navbar-collapse clearfix collapse" role="navigation" style="height: 1px;">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="{{url('/')}}">Home</a></li>
+				<li class="dropdown">
+					   <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <i class="fa fa-angle-down"></i></a>
+					   <div class="dropdown-menu">
+						<ul>
+							<li><a href="{{ url('about') }}">About Us</a></li>
+							<li><a href="{{ url('our-services') }}">Our Services</a></li>
+							<li><a href="{{ url('testimonials') }}">Testimonials</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Accommodation <i class="fa fa-angle-down"></i></a>
+					<div class="dropdown-menu">
+						<ul>
+							<li><a href="{{ url('huts') }}">Huts</a></li>
+							<li><a href="{{ url('hostel') }}">Hostel</a></li>
+						</ul>
+					</div>
+			 </li>
+				<li><a href="{{ url('our-services') }}">Our Services</a></li>
+				<li><a href="{{ url('tariff') }}">Tariff</a></li>
+				<li><a href="{{ url('testimonials') }}">Testimonials</a></li>
+				<li><a href="{{ url('blog') }}">Blog</a></li>
+				<li><a href="{{ url('gallery') }}">Gallery</a></li>
+				<li><a href="{{ url('booking') }}">Booking</a></li>
+				<li><a href="{{url('contact')}}">Contact</a></li>
+			</ul>
+		</nav><!--/ Navigation end -->
+	</div><!--/ Row end -->
+</div><!--/ Container end -->
+</header><!--/ Header end -->

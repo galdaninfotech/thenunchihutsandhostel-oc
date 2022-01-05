@@ -1,0 +1,23 @@
+title = "Account"
+url = "/account"
+layout = "default"
+description = "User Account Page"
+meta_title = "Account"
+meta_description = "Account"
+is_hidden = 0
+seo_keywords = "Account"
+robot_index = "noindex"
+robot_follow = "follow"
+
+[account]
+redirect = "client/bookings"
+paramCode = "code"
+forceSecure = 0
+==
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% component 'account' %}
+        </div>
+    </div>
+</div>

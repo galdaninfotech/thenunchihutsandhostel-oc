@@ -1,0 +1,1085 @@
+
+@import 'config.scss';
+
+/* #region Main */
+.button {
+  display: inline-block;
+  background: #0c8040;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 7px 131px;
+  border-radius: 61px;
+  -webkit-box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms; }
+
+.button:hover {
+  /*on hover we get a raised up effect*/
+  -webkit-box-shadow: 0px 37px 20px -20px $primary;
+  box-shadow: 0px 37px 20px -20px $primary;
+  -webkit-transform: translate(0px, -2px) scale(1);
+  transform: translate(0px, -2px) scale(1); 
+  color: $primary;
+  text-decoration: none;
+}
+  a {
+    text-decoration: none;
+  }
+  p {
+    color: #c3c4c5;
+    letter-spacing: .5px;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+#main-menu-wrapper {
+  position: fixed;
+  background: #0f1726;
+  min-width: 100%;
+  padding: 5px;
+  display: none;
+  z-index: 11111;
+  text-align: center;
+  height: 100vh; }
+
+#open-menu {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  z-index: 999; }
+
+.wrapper-menu {
+  position: fixed;
+  left: 4%;
+  top: 5%;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 330ms ease-out;
+  transition: -webkit-transform 330ms ease-out;
+  transition: transform 330ms ease-out;
+  transition: transform 330ms ease-out, -webkit-transform 330ms ease-out;
+  z-index: 9999999; }
+
+.wrapper-menu.open {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.line-menu {
+  background-color: $acc1;
+  border-radius: 5px;
+  width: 100%;
+  height: 6px; }
+
+.line-menu.half {
+  width: 50%; }
+
+.line-menu.start {
+  -webkit-transition: -webkit-transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: -webkit-transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57), -webkit-transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  -webkit-transform-origin: right;
+  transform-origin: right;
+  background-color: $acc1;
+  margin-top: 8px; }
+
+.open .line-menu.start {
+  -webkit-transform: rotate(-90deg) translateX(3px);
+  transform: rotate(-90deg) translateX(3px); }
+
+.line-menu.end {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  -webkit-transition: -webkit-transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: -webkit-transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57), -webkit-transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  background-color: $acc1;
+  -webkit-transform-origin: left;
+  transform-origin: left; }
+
+.open .line-menu.end {
+  -webkit-transform: rotate(-90deg) translateX(-3px);
+  transform: rotate(-90deg) translateX(-3px); }
+
+.navigation {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem; }
+
+.mainmenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.mainmenu__item {
+  display: inline-block;
+  white-space: nowrap; }
+
+.mainmenu__link {
+  display: block;
+  padding: 8px 30px 3px; }
+  .mainmenu__link:hover .mainmenu__first-word, .mainmenu__link:focus .mainmenu__first-word {
+    -webkit-transform: translate3d(0, -105%, 0);
+    transform: translate3d(0, -105%, 0); }
+  .mainmenu__link:hover .mainmenu__second-word, .mainmenu__link:focus .mainmenu__second-word {
+    -webkit-transform: translate3d(0, 105%, 0);
+    transform: translate3d(0, 105%, 0); }
+
+.mainmenu__title {
+  display: inline-block;
+  overflow: hidden; }
+
+.mainmenu__first-word, .mainmenu__second-word {
+  display: inline-block;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s; }
+  .mainmenu__first-word::before, .mainmenu__second-word::before {
+    position: absolute;
+    content: attr(data-hover); }
+
+.mainmenu__first-word {
+  color: #0c8040; }
+  .mainmenu__first-word::before {
+    top: 105%;
+    color: #626262; }
+
+.mainmenu__second-word {
+  color: #626262; }
+  .mainmenu__second-word::before {
+    bottom: 105%;
+    color: #0c8040; }
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px; }
+
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out; }
+
+#main-menu-wrapper > nav > ul > li ul > li {
+  text-align: left;
+  margin-left: 50%; }
+
+#main-menu-wrapper > nav > ul > li ul > li a {
+  text-decoration: none;
+  font-size: 1.4rem; }
+
+.mainmenu-bottom-links {
+  position: fixed;
+  bottom: 5vh;
+  left: 32vw; }
+
+.mainmenu-bottom-links a {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0c8040;
+  margin-right: 4px; }
+
+.mainmenu-bottom-links a span {
+  margin-left: 8px; }
+/* #endregion */
+/* #region HT-Hero */
+.ht-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
+
+.ht-hero-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.ht-hero-wrapper::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 80%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0)), color-stop(80%, rgba(0, 0, 0, .8)), to(rgba(0, 0, 0, .8)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .8) 80%, rgba(0, 0, 0, .8) 100%); }
+
+.logowrapper {
+  background: #010b17;
+  opacity: 0.3;
+  position: absolute;
+  right: 6%;
+  height: 100%; }
+
+.vertical {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+.ht-hero .logowrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  left: 70vw; }
+
+.ht-hero .logowrapper .text-vertical {
+  margin: 0;
+    position: relative;
+    top: 4vh;
+    left: -45vh;
+    font-size: 2rem;
+    border-bottom: 2px solid #f0f0f1;
+    width: 99vh;
+    color: #f0f0f1;
+    text-transform: uppercase;
+    letter-spacing: 1rem; }
+
+.ht-hero .logowrapper .slogan {
+  position: relative;
+    top: 4vh;
+    left: 5vh;
+    font-size: 1rem;
+    display: block;
+    letter-spacing: 0.4rem; }
+
+.ht-hero-wrapper {
+  text-align: center;
+}
+.ht-hero-wrapper h1 {
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1rem; }
+
+.ht-hero-wrapper h4 {
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1.8rem;
+}
+
+.himalaya-trails2 {
+    background: url('../images/pages/himalaya-trails-home-lg.jpg') center center / cover no-repeat;
+}
+.himalaya-trails {
+  background: url('../images/pages/himalaya-trails-home-lg.jpg') center center / cover no-repeat;
+}
+.rumtse-tsomoriri-trek {
+  background: url('../images/trekking/rumtse-tsomoriri-trek-lg.jpg') center center / cover no-repeat;
+}
+.fantastic-zanskar-trek {
+background: url('../images/trekking/fantastic-zanskar-trek-lg.jpg') center center / cover no-repeat;
+}
+.markha-valley-trek-with-kangyatse {
+  background: url('../images/trekking/markha-valley-trek-with-kangyatse-lg.jpg') center center / cover no-repeat;
+  }
+.kharnak-valley-trek {
+background: url('../images/trekking/kharnak-valley-trek-lg.jpg') center center / cover no-repeat;
+}
+.kangla-expedition {
+  background: url('../images/expedition/kang-la-expedition-lg.jpg') center center / cover no-repeat;
+}
+.stok-kangri-expedition {
+background: url('../images/expedition/stok-kangri-expedition-lg.jpg') center center / cover no-repeat;
+}
+.kangyatse-expedition {
+background: url('../images/expedition/kangyatse-expedition-lg.jpg') center center / cover no-repeat;
+}
+.mentok-kangri-expedition {
+background: url('../images/expedition/mentok-kangri-expedition-lg.jpg') center center / cover no-repeat;
+} 
+.ladakh-delight {
+background: url('../images/culture/ladakh-delight-lg.jpg') center center / cover no-repeat;
+}
+.amazing-ladakh {
+  background: url('../images/culture/amazing-ladakh-lg.jpg') center center / cover no-repeat;
+  }
+.magical-ladakh {
+  background: url('../images/culture/magical-ladakh-lg.jpg') center center / cover no-repeat;
+  }
+.ladakh-luxury-package {
+background: url('../images/culture/ladakh-luxury-package-lg.jpg') center center / cover no-repeat;
+}
+.camping-riding-ladakh {
+  background: url('../images/biking/camping-riding-ladakh-lg.jpg') center center / cover no-repeat;
+}
+.ladakh-bike-tour {
+  background: url('../images/biking/ladakh-bike-tour-lg.jpg') center center / cover no-repeat;
+}
+.chadar-trek {
+  background: url('../images/trekking/chadar-trek-lg.jpg') center center / cover no-repeat;
+}
+
+.about-ladakh {
+  background: url('../images/pages/about-us-lg.jpg') center center / cover no-repeat;
+}
+.art-culture {
+  background: url('../images/pages/art-culture-lg.jpg') center center / cover no-repeat;
+}
+.wildlife {
+  background: url('../images/pages/wildlife-lg.jpg') center center / cover no-repeat;
+}
+#ht-slider-contact {
+  z-index: 2;
+  margin-top: 4rem;
+  font-size: 1.4rem; }
+
+.animate {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+#ht-slider-contact a.social-icon {
+  text-decoration: none !important;
+  margin-right: 0px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 6px;
+  -webkit-box-shadow: 0px 0px 1px rgba(51, 51, 51, 0.7);
+  box-shadow: 0px 0px 1px rgba(51, 51, 51, 0.7); }
+
+#ht-slider-contact a.social-icon:hover {
+  color: #fff !important; }
+
+#ht-slider-contact a.facebook {
+  color: #5e8be8 !important; }
+
+#ht-slider-contact a.facebook:hover {
+  background-color: #3b5a9a !important; }
+
+#ht-slider-contact a.twitter {
+  color: #2da8e1 !important; }
+
+#ht-slider-contact a.twitter:hover {
+  background-color: #2da8e1 !important; }
+
+#ht-slider-contact a.github {
+  color: #333 !important; }
+
+#ht-slider-contact a.github:hover {
+  background-color: #333 !important; }
+
+#ht-slider-contact a.google-plus {
+  color: #f45e4b !important; }
+
+#ht-slider-contact a.google-plus:hover {
+  background-color: #f45e4b !important; }
+
+#ht-slider-contact a.linkedin {
+  color: #0174b3 !important; }
+
+#ht-slider-contact a.linkedin:hover {
+  background-color: #0174b3 !important; }
+
+#ht-slider-contact a {
+  position: relative;
+  font-size: 0.8em;
+  padding: 10px; }
+/* #endregion */
+/* New Explore More Button */
+/* #region New-Explore-More */
+#parallax-wrapper > section:nth-child(1) > div {
+  height: 80vh; }
+
+.ht-hero-wrapper .explore-more-wrapper {
+  z-index: 2; }
+
+.explore-more-wrapper a {
+  position: absolute;
+  bottom: 18vh;
+  z-index: 2;
+  display: inline-block;
+  color: #a5986a;
+  font: normal 400 15px 'Josefin Sans', sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none; }
+
+.explore-more-wrapper a:hover {
+  opacity: 0.5; }
+
+.explore-more-wrapper a.explore-more span {
+  position: absolute;
+  bottom: -5vh;
+  left: 45%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb04 2s infinite;
+  animation: sdb04 2s infinite;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-color: #a5986a; }
+
+#parallax-wrapper section > div > div > div.col-md-12.explore-more-wrapper > a {
+  bottom: -6vh;
+}
+
+@-webkit-keyframes sdb04 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0); }
+
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px); }
+
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0); } }
+
+@keyframes sdb04 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    transform: rotate(-45deg) translate(0, 0); }
+
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+    transform: rotate(-45deg) translate(-10px, 10px); }
+
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    transform: rotate(-45deg) translate(0, 0); } }
+
+.home-primary-heading {
+  font-size: 3rem;
+  text-transform: uppercase; }
+/* #endregion */
+/* #region Parallax */
+.parallax [class*="bg__"] {
+  position: relative;
+  height: 450px;
+  text-indent: -9999px;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  max-width: 100%;
+  margin: 0;
+  padding: 0; }
+
+.parallax [class*="bg__"]:nth-child(2n) {
+  -webkit-box-shadow: inset 0 0 1em #111;
+  box-shadow: inset 0 0 1em #111; }
+
+.parallax .bg__foo, .parallax .bg__bazz {
+  height: 100vh; }
+
+.parallax .bg__foo {
+  background-image: url('../hmmm/himalaya-trails-front-main.jpg');
+  filter: hue-saturate(8deg);
+  -webkit-filter: hue-saturate(8deg);
+  /* Safari 6.0 - 9.0 */ }
+
+.parallax .bg__bar {
+  background-image: url('../hmmm/himalaya-trails-front-main.jpg');
+  filter: hue-rotate(90deg);
+  -webkit-filter: hue-rotate(90deg);
+  /* Safari 6.0 - 9.0 */ }
+
+.parallax .bg__baz {
+  background-image: url('../hmmm/himalaya-trails-front-main.jpg');
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(50%);
+  /* Safari 6.0 - 9.0 */ }
+
+.parallax .bg__bazz {
+  background-image: url('../hmmm/himalaya-trails-front-main.jpg');
+  filter: hue-rotate(90deg);
+  -webkit-filter: hue-rotate(180deg);
+  /* Safari */ }
+
+.parallax .bg__break {
+  -webkit-box-shadow: inset 0 0 1em #111;
+  box-shadow: inset 0 0 1em #111;
+  background-image: url('../hmmm/himalaya-trails-front-main.jpg');
+  filter: hue-rotate(90deg);
+  -webkit-filter: hue-rotate(160deg);
+  /* Safari 6.0 - 9.0 */ }
+
+
+body > div.container.mt-5.mb-2 > div > div > h1 {
+  margin: 0 auto; }
+
+#Mountain-expedition, #cultural-tour, #biking-tour {
+  height: auto; }
+/* #endregion */
+/* #region Trekking */
+.snip1369 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: auto 0px;
+  min-width: 200px;
+  max-width: 100%;
+  width: 100%;
+  background: #20638f;
+  text-align: left;
+  color: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  float: left;
+  margin-bottom: 25px; }
+
+.snip1369 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+
+.snip1369 > img, .snip1369 .image img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  max-width: 100%; }
+
+.snip1369 > img {
+  vertical-align: top;
+  position: relative;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  opacity: 0.6; }
+
+.snip1369 figcaption, .snip1369 .image {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s; }
+
+.snip1369 .image {
+  position: absolute;
+  top: 0;
+  bottom: 25%;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 1px 0 rgba(255, 255, 255, 0.2); }
+
+.snip1369 .image img {
+  position: absolute;
+  top: 0; 
+  width: 100vw;
+}
+
+.snip1369 figcaption {
+  position: absolute;
+  top: 75%;
+  bottom: 36px;
+  left: 20px;
+  right: 20px;
+  border-bottom: 2px solid #fff;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.snip1369 h3, .snip1369 p {
+  margin: 0; }
+
+.snip1369 h3 {
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 1.2rem; }
+
+.snip1369 p {
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  font-weight: 400;
+  opacity: 0; }
+
+.snip1369 .read-more {
+  display: block;
+  opacity: 1;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  line-height: 38px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  color: #fff;
+  right: 0;
+  bottom: 5px;
+  position: absolute;
+  font-size: 0.7em; }
+
+.snip1369 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1; }
+
+.snip1369:hover .read-more, .snip1369.hover .read-more, .snip1369:hover figcaption, .snip1369.hover figcaption {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px); }
+
+.snip1369:hover figcaption, .snip1369.hover figcaption, .snip1369:hover .image, .snip1369.hover .image {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s; }
+
+.snip1369:hover figcaption, .snip1369.hover figcaption {
+  top: 50%; }
+
+.snip1369:hover .image, .snip1369.hover .image {
+  bottom: 50%; }
+
+.snip1369:hover p, .snip1369.hover p {
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s; }
+/* #endregion */
+/* #region Footer */
+footer {
+  background: #0f1726;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-size: 1.4rem;
+  letter-spacing: 1px; 
+  text-align: center;
+}
+
+form#subscribe .form-control {
+  font-size: 1.4rem;
+  height: calc(3rem + 2px); }
+
+footer .container h4 {
+  color: rgba(204, 204, 204, .5);
+  text-transform: capitalize;
+  font-size: 1.7rem;
+  color: rgba(204, 204, 204, .5);
+  letter-spacing: 0.2rem;
+  text-transform: capitalize; }
+
+body > footer > div.row.footer-bottom-wrapper {
+  background: #000;
+  height: 10vh;
+  padding: 12px; 
+text-align: left;}
+
+body > footer > div.row.footer-bottom-wrapper > col-md-6 > div {
+  position: absolute;
+  right: 14px; }
+
+body > footer > div.row.footer-bottom-wrapper > div > div > h5 {
+  display: inline;
+  padding-right: 10px; }
+
+body > footer > div.container.pt-5 > div.row > div.col-xs-12.col-sm-12.col-md-12.col-lg-4.mt-5.mt-lg-0.mb-3.mb-lg-0 > div > div > p {
+  color: green; }
+
+#footer ul.footer-ul-link li {
+  list-style: none;
+  margin-left: -4rem; }
+
+#footer ul.footer-ul-link a {
+  font-size: 1.41rem;
+  text-transform: capitalize; }
+
+#footer form#subscribe {
+  margin-top: 12px;
+  display: grid;
+}
+body > footer > div.row.footer-bottom-wrapper > div > div > h5, footer .footer-bottom-copyright span, .copyright-links a {
+ font-size: 1.2rem;
+}
+#scroll-top {
+  -webkit-transition: all 2s linear;
+  transition: all 2s linear;
+}
+/* #endregion */
+
+
+
+//Main Content
+.main-content {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
+}
+.main-content h1 {
+  color: $acc1;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.home-primary-heading {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  color: #0c8040; }
+
+.primary-heading > .row{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 4rem;
+  color: #0c8040;
+  text-align: center;
+}
+
+
+
+// Tour
+.home-trekking {
+  height: auto;
+}
+.home-trekking .explore-more-wrapper a {
+  bottom: -6vh;
+}
+.home-trekking .explore-more-wrapper, 
+body > div.container.home-trekking > div > div.col-md-12.explore-more-wrapper.d-flex.flex-direction-row.justify-content-center > a, 
+#what-kind > div > div.col-md-12.explore-more-wrapper.d-flex.flex-direction-row.justify-content-center > a, 
+#cultural-tour > div > div > div.col-md-12.explore-more-wrapper.d-flex.flex-direction-row.justify-content-center > a, 
+#biking-tour > div > div > div.col-md-12.explore-more-wrapper.d-flex.flex-direction-row.justify-content-center > a {
+    display: none;
+}
+
+//Booking Form
+#booking-form .form-control, #contact-form .form-control {
+margin-top: 10px;
+font-size: 1.3rem;
+margin-top: 10px;
+  font-size: 1.3rem;
+  background: #aba5a5;
+  border: none;
+  color: #ddd;
+}
+
+
+//Ladakh Festival
+table.festival {
+color: #748274;
+font-size: 1.4rem;
+}
+
+
+// Contact
+#address_head {
+font-size: 1.8rem;
+}
+#address_head small {
+font-size: 1.2rem;
+}
+#address {
+font-size: 1.3rem;
+letter-spacing: 1px;
+}
+
+//Testimonials
+blockquote .blockquote-footer {
+background-color: transparent;
+font-size: 1.4rem;
+}
+
+
+/* form specific formatting */
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.form-group label {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  display: block;
+  width: 125px;
+  font-weight: bold;
+  font-size: 1em;
+}
+.form-group label.right-inline {
+  text-align: right;  
+  padding-right: 8px;
+  padding-left: 10px;
+  width: auto;
+}
+
+.form-group .input-control {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  padding: 4px;
+  margin-top: -4px;
+}
+
+button {
+  padding: 5px 15px;
+  margin: 5px;
+  min-width: 100px
+}
+#customise-form > div > input {
+  width: 100%;
+}
+
+.home-trekking > div > div > div > figure > img,
+#mountain-expedition > div > div > div > figure > img,
+#trekking > div > div > div > figure > img,
+#biking-tour > div > div > div > figure > img,
+#cultural-tour > div > div > div > figure > img {
+  width: 100%;
+}
+
+.primary-heading p {
+    text-align: left;
+}
+
+@media (min-width: 576px) { 
+    /* Social */
+    ul.header-social{list-style:none;padding:0; display:inline; position: absolute; top: 10px;top: -40px; right: 260px; color: #0f1726}
+    ul.header-social li{display:inline-block}
+    ul.header-social li:first-child{vertical-align:top;margin:5px;font-weight:500}
+    ul.header-social a{background-image:url(../images/social-sm.png);background-repeat:no-repeat;display:block;height:22px;-webkit-transition:all 350ms ease-out;transition:all 350ms ease-out;width:22px}
+    ul.header-social a.get-in-touch{background:none;width:90px;color:#fff;text-transform:uppercase;font-size:11px;font-weight:bold;line-height:22px;position:relative;top:-12px}
+    ul.header-social a:hover{background-position-y:2px;filter:alpha(opacity=80); opacity:0.8}
+    ul.header-social a.facebook{background-position:0px 0px}
+    ul.header-social a.facebook:hover{background-position:0px -20px}
+    ul.header-social a.instagram{background-position:-24px 0px}
+    ul.header-social a.instagram:hover{background-position:-24px -20px}
+    ul.header-social a.youtube{background-position:-69px 0px}
+    ul.header-social a.youtube:hover{background-position:-69px -21px}
+    ul.header-social a.twitter{background-position:-47px 0px}
+    ul.header-social a.twitter:hover{background-position:-47px -21px }
+    
+    ul.header-social li span {
+        margin-bottom: 0px;
+        float: left;
+    }
+    
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(1) > a > span > span.mainmenu__first-word,
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(2) > a > span > span.mainmenu__first-word,
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(7) > a > span > span.mainmenu__second-word,
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(8) > a > span > span.mainmenu__second-word,
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(7),
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(8) {
+      display: none;
+    }
+    .navigation {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-family: 'Pathway Gothic One', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem; 
+        position: absolute;
+      z-index: 9999999999;}
+      .navigation > a {
+        position: relative;
+        top: 2px;
+        left: 25px;
+      }
+      .navigation > a > img {
+        width: 50%;
+      }
+      #mainmenu-wrapper {
+        background: #0f1726;
+        position: relative;
+        z-index: 9999999999;
+        top: 50px;
+        height: 75px;
+        -webkit-box-shadow: 1px 1px 1px 1px #000;
+        box-shadow: 1px 1px 1px 1px #000;
+        opacity: 0.9;
+      }
+      .mainmenu {
+        margin: 0 auto;
+        padding-left: 0;
+        display: block;
+        margin-left: -48px;
+        margin-top: 4px;
+    }
+    
+  .mainmenu__item {
+    background: #0f1726;
+    position: relative;
+    display: inline-block;
+    padding: 15px 2px;
+    white-space: nowrap; }
+  
+  .mainmenu__link {
+    display: block;
+    padding: 8px 5px 3px; 
+}
+
+    .mainmenu__link:hover .mainmenu__first-word, .mainmenu__link:focus .mainmenu__first-word {
+      -webkit-transform: translate3d(0, -105%, 0);
+      transform: translate3d(0, -105%, 0); }
+    .mainmenu__link:hover .mainmenu__second-word, .mainmenu__link:focus .mainmenu__second-word {
+      -webkit-transform: translate3d(0, 105%, 0);
+      transform: translate3d(0, 105%, 0); }
+      .submenu {
+        font-size: 1.4rem;
+        position: absolute;
+        overflow: hidden;
+        max-height: 0;
+        -webkit-transition: all 2s ease-out;
+        transition: all 2s ease-out; 
+        background: #0f1726;
+        padding-left: 12px;
+        padding-top: 5px;
+      }
+      .submenu > li {
+        padding: 8px;
+        list-style: none;
+      }
+      .submenu > li a {
+        text-decoration: none;
+      }
+      .wrapper-menu {
+          display: none;
+      }
+      #main-menu-wrapper > nav > ul > li ul > li {
+        text-align: left;
+        margin-left: 50%; }
+        
+        #main-menu-wrapper > nav > ul > li ul > li a {
+          text-decoration: none;
+        font-size: 1.4rem; }
+
+
+    .ht-hero {
+        position: relative;
+        top: -75px;
+    }
+    .explore-more-wrapper a {
+        bottom: 30vh;
+    }
+    .home-trekking .explore-more-wrapper a {
+        display: none;
+    }
+
+    .ht-hero-wrapper h4 {
+        font-size: 3rem;
+    }
+    #ht-slider-contact a.social-icon {
+        font-size: 2rem;
+    }
+ }
+
+
+ @media (min-width: 768px) { 
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(7),
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(8) {
+      display: inline-block;
+    }
+    .mainmenu {
+        margin-left: -12px;
+    }
+
+ }
+
+ @media (min-width: 992px) { 
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(1) > a > span > span.mainmenu__first-word,
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(2) > a > span > span.mainmenu__first-word, 
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(7) > a > span > span.mainmenu__second-word, 
+    #mainmenu-wrapper > div > div > nav > ul.mainmenu > li:nth-child(8) > a > span > span.mainmenu__second-word {
+      display: inline-block;
+    }
+    .navigation {
+        font-size: 1.8rem;
+    }
+    .mainmenu {
+        margin-left: 48px;
+    }
+    .navigation > a {
+        position: relative;
+        top: -22px;
+        left: 5px;
+    }
+    .mainmenu__link {
+        padding: 8px 12px 3px;
+    }
+    .navigation > a > img {
+        width: 88%;
+    }
+    .mainmenu__item {
+        padding: 14px 2px;
+    }
+    body > div.container.home-trekking > div > div figure > img, 
+    #what-kind > div div figure > img,
+    #trekking > div > div > div figure > img, 
+    #biking-tour > div > div > div figure > img, 
+    #cultural-tour > div > div > div figure > img {
+        height: 100%;
+        width: auto;
+    }
+
+    .snip1369 .image img {
+        height: 52vh;
+    }
+    #what-kind, .home-trekking, #trekking, #biking-tour, #cultural-tour {
+        height: 100vh;
+    }
+    #explore-more-first {
+        bottom: 30vh;
+    }
+    .home-trekking .explore-more-wrapper a {
+        display: block;
+    }
+    .explore-more-wrapper a {
+        bottom: -6vh;
+    }
+ }
+ 
